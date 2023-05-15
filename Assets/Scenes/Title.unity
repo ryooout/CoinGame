@@ -799,6 +799,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 6242201668562384380, guid: 71b7716ad12b8bb49afaa9e57c212fd4, type: 3}
+      propertyPath: _coinAmount
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6242201668562384381, guid: 71b7716ad12b8bb49afaa9e57c212fd4, type: 3}
       propertyPath: m_RootOrder
       value: 4

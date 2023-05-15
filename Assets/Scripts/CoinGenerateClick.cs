@@ -8,7 +8,7 @@ public class CoinGenerateClick : MonoBehaviour
     GameObject _coinObj = default;
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -20,17 +20,17 @@ public class CoinGenerateClick : MonoBehaviour
             // nGUI上をクリックしているので処理をキャンセルする。
             return;
         }
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !GameManager.Instance.GameEnd)
         {
             if (GameManager.Instance.CoinAmount > 0)
             {
-                Instantiate(_coinObj,transform.position,transform.rotation);
+                Instantiate(_coinObj, transform.position, transform.rotation);
                 GameManager.Instance.CoinAmount--;
             }
-            else if (GameManager.Instance.CoinAmount < 0)
-            {
-                GameManager.Instance.CoinAmount = 0;
-            }
+        }
+        if (GameManager.Instance.CoinAmount < 0)
+        {
+            GameManager.Instance.CoinAmount = 0;
         }
     }
 }

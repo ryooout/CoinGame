@@ -7,8 +7,10 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     [SerializeField, Tooltip("ƒRƒCƒ“Šl“¾”")]
-    private int _coinAmount;
+    private int _coinAmount = 100;
     public int CoinAmount { get => _coinAmount; set => _coinAmount = value; }
+    bool _gameEnd = false;
+    public bool GameEnd { get => _gameEnd; set => _gameEnd = value; }
     void Awake()
     {
         if (Instance != null)
@@ -47,7 +49,7 @@ public class GameManager : MonoBehaviour
         SaveData save = new SaveData();
 
         save.TotalAmount = _coinAmount;
-        LocalData.Save<SaveData>(Application.dataPath + "/save.json", save);
+        LocalData.Save(Application.dataPath + "/save.json", save);
         Debug.Log(save.TotalAmount);
     }
     public void ResetNum()
